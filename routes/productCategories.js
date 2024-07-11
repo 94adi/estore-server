@@ -2,18 +2,7 @@ const express = require('express');
 
 const productCategories = express.Router();
 
-const mysql = require('mysql2');
-
-const PORT = 5001;
-
-const pool = mysql.createPool({
-    host: '<host>',
-    user: '<user>',
-    password: '<password>',
-    database: '<database>',
-    port: 'port',
-    multipleStatements: true
-});
+const pool = require('../shared/pool');
 
 productCategories.get('/', (req,res) =>{
     
